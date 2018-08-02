@@ -1,0 +1,6 @@
+#target: 127.0.0.1
+fed: 127.0.0.1
+fc: 0.0.0.0
+
+location: "Davis, CA, USA"
+device_id: "dev-01"

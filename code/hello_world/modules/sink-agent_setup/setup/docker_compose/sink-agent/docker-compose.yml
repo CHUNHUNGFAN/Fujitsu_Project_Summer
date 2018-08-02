@@ -1,0 +1,32 @@
+sink-agent:
+  image: sink-agent
+  container_name: sink-agent
+  links:
+   - "rawdb"
+   - "memcached"
+  external_links:
+   - "rabbit"
+  ports:
+   - "30013:8080"
+  volumes:
+   - ./config:/var/lib/jetty/webapps/config:ro
+  stdin_open: true
+  tty: true
+
+rawdb:
+  image: mongo
+  container_name: rawdb
+  ports:
+    - "30002:27017"
+  volumes:
+   - ./raw_db:/data/db
+  stdin_open: true
+  tty: true
+
+memcached:
+  image: memcached
+  container_name: "memcached"
+  ports:
+    - "35002:11211"
+    
+#COPYRIGHT Fujitsu Limited 2017 and FUJITSU LABORATORIES LTD. 2017

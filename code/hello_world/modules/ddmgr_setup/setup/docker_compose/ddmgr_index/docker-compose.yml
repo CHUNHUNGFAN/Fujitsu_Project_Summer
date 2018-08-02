@@ -1,0 +1,41 @@
+index-ddmgr:
+  image: distributeddatamgr
+  container_name: "drcda_index"
+  links:
+   - "rabbit"
+   - "mongo"
+   - "sublist"
+#  external_links:
+#   - "resolver"
+  ports:
+   - "34001:30000"
+  volumes:
+   - ./config_index:/home/config:ro
+  stdin_open: true
+  tty: true
+
+rabbit:
+  image: rabbitmq
+  container_name: "rabbit"
+  ports:
+   - "30011:1883"
+  stdin_open: true
+  tty: true
+
+mongo:
+  image: mongo
+  container_name: "mongo"
+  ports:
+   - "30001:27017"
+  volumes:
+   - ./mongo:/data/db
+  stdin_open: true
+  tty: true
+
+sublist:
+  image: memcached
+  container_name: "sublist"
+  ports:
+    - "35001:11211"
+
+#COPYRIGHT Fujitsu Limited 2017 and FUJITSU LABORATORIES LTD. 2017

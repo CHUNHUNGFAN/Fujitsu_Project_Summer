@@ -1,0 +1,55 @@
+- hosts: target
+  # modified by Yu-Chang Ho (20180724 23:58 PST)
+  # --------------------
+  remote_user: ucdavis
+  become_method: sudo
+  become_user: root
+  # --------------------
+  tasks:
+    # added by Yu-Chang Ho (20180725 10:45 PST)
+    - name: install docker required tools
+      yum: pkg={{item}} state=installed
+      with_items:
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+
+    - name: add stable docker repo
+      command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: install docker
+      #yum: name=docker state=latest
+      yum: name=docker-ce state=latest
+
+    # modified by Yu-Chang Ho (20180725 10:45 PST)
+    - name: grant admin user to use docker
+      command: sudo usermod -aG docker ucdavis
+
+    - name: install maven
+      yum: name=maven state=latest
+
+    - name: install docker-compose
+      get_url:
+        url: "https://github.com/docker/compose/releases/download/1.16.1/docker-compose-{{ansible_system}}-{{ansible_machine}}"
+        dest: /usr/local/bin/docker-compose
+        
+    - lineinfile: >
+        dest=/etc/selinux/config 
+        regexp='SELINUX=enforcing'
+        line='SELINUX=permissive'
+
+    - name: chmod docker-compose
+      command: chmod +x /usr/local/bin/docker-compose
+
+    - name: restart docker
+      service: name=docker state=restarted enabled=yes
+
+    - name: execute reboot
+      shell: sleep 2 && shutdown -r now "Ansible updates triggered"
+      async: 1
+      poll: 0
+      sudo: true
+      ignore_errors: true
+
+
+#COPYRIGHT Fujitsu Limited 2017 and FUJITSU LABORATORIES LTD. 2017

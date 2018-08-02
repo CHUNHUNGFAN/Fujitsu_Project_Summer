@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<servlet>
+		<servlet-name>DrcdaAPI</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.fujitsu.dcfpj.sink_agent</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DrcdaAPI</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+ 
+	<servlet>
+		<servlet-name>WsServlet</servlet-name>
+		<servlet-class>com.fujitsu.dcfpj.sink_agent.websocket.WsServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WsServlet</servlet-name>
+		<url-pattern>/ws/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>
+
+<!-- COPYRIGHT Fujitsu Limited 2017 and FUJITSU LABORATORIES LTD. 2017 -->

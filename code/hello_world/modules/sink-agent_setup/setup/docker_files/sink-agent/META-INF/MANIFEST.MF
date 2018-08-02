@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: jenkins
+Class-Path: lib/jetty-server-9.4.7.v20170914.jar lib/javax.servlet-api
+ -3.1.0.jar lib/jetty-http-9.4.7.v20170914.jar lib/jetty-io-9.4.7.v201
+ 70914.jar lib/jetty-servlet-9.4.7.v20170914.jar lib/jetty-security-9.
+ 4.7.v20170914.jar lib/jetty-webapp-9.4.7.v20170914.jar lib/jetty-xml-
+ 9.4.7.v20170914.jar lib/websocket-server-9.4.7.v20170914.jar lib/webs
+ ocket-client-9.4.7.v20170914.jar lib/jetty-client-9.4.7.v20170914.jar
+  lib/websocket-servlet-9.4.7.v20170914.jar lib/websocket-api-9.4.7.v2
+ 0170914.jar lib/websocket-common-9.4.7.v20170914.jar lib/jetty-util-9
+ .4.7.v20170914.jar lib/jersey-server-1.19.4.jar lib/jersey-core-1.19.
+ 4.jar lib/jsr311-api-1.1.1.jar lib/jersey-servlet-1.19.4.jar lib/jers
+ ey-json-1.19.4.jar lib/jettison-1.1.jar lib/jaxb-impl-2.2.3-1.jar lib
+ /jaxb-api-2.2.2.jar lib/stax-api-1.0-2.jar lib/activation-1.1.jar lib
+ /jackson-core-asl-1.9.2.jar lib/jackson-mapper-asl-1.9.2.jar lib/jack
+ son-jaxrs-1.9.2.jar lib/jackson-xc-1.9.2.jar lib/log4j-core-2.7.jar l
+ ib/log4j-api-2.7.jar lib/amqp-client-4.1.0.jar lib/slf4j-api-1.7.21.j
+ ar lib/jackson-databind-2.8.6.jar lib/jackson-annotations-2.8.0.jar l
+ ib/jackson-core-2.8.6.jar lib/mongo-java-driver-3.4.2.jar lib/guava-2
+ 1.0.jar lib/commons-configuration-1.10.jar lib/commons-lang-2.6.jar l
+ ib/commons-logging-1.1.1.jar lib/org.eclipse.paho.client.mqttv3-1.1.1
+ .jar lib/Memcached-Java-Client-3.0.2.jar lib/commons-pool-1.5.6.jar
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_45
+

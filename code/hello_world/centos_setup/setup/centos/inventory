@@ -1,0 +1,6 @@
+[target]
+#XXX.XXX.XXX.XXX
+# Format: <IP>:<PORT>
+127.0.0.1:8800
+
+#COPYRIGHT Fujitsu Limited 2017 and FUJITSU LABORATORIES LTD. 2017
