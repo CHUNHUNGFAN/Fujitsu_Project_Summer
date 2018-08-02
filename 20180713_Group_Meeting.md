@@ -9,4 +9,3 @@
 * We don't need to worry about delivery algorithm now, receive everything then delivery everything
 
 * ![Meeting_0713](./figures/Meeting_0713.jpg)
-Hello Hello
