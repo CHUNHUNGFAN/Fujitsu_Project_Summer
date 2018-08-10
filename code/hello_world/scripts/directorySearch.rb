@@ -24,6 +24,7 @@ uri = base_uri + resource_path + "_past?$filter=value eq 'dev-01'"
 
 uri = URI.parse(uri)
 
+# Ref. https://www.rubydoc.info/gems/httpclient/2.1.5.2/HTTPClient
 res = client.get(uri,nil,header)
 
 # puts uri
@@ -32,6 +33,13 @@ res = client.get(uri,nil,header)
 # puts res.body
 
 jsonResult = JSON.parse( res.body )
+idx=0
+while idx < jsonResult.count
+    puts idx
+    puts jsonResult[idx]['_data']['gen_time']
+    idx += 1
+end
+
 
 # data_id = jsonResult[1]
 # puts data_id
