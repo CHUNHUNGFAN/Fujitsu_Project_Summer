@@ -29,3 +29,9 @@ puts res.body
 #{"result":true,"data_id":"4332579a-1762-4af9-81a7-a762be3f0f4e"}
 #[ucdavis@localhost scripts]$ date
 #Thu Aug  2 16:58:19 PDT 2018
+
+#[ucdavis@localhost scripts]$ ruby rawdata.rb
+#code=200
+#{"result":true,"data_id":"fa5c761b-e45c-4a00-b076-a7278c8463ec"}
+#[ucdavis@localhost scripts]$ date
+#Sun Aug  5 10:28:00 PDT 2018
