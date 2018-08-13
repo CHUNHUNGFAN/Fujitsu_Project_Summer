@@ -32,13 +32,28 @@ res = client.get(uri,nil,header)
 # puts "code=#{res.code}"
 # puts res.body
 
-jsonResult = JSON.parse( res.body )
+jsonGwResult = JSON.parse( res.body )
 idx=0
-while idx < jsonResult.count
-    puts idx
-    puts jsonResult[idx]['_data']['gen_time']
-    idx += 1
-end
+gw_id = jsonGwResult[idx]['_data']['gw_id']
+# while idx < jsonResult.count
+#     gw_id = jsonResult[idx]['_data']['gw_id']
+#     idx += 1
+# end
+
+gatewayResourcePath = 'testbeddir/gws/'
+searchAddressUri = base_uri + gatewayResourcePath + '_past?$filter=id eq ' + "'" + gw_id + "'"
+searchAddressUri = URI.parse(searchAddressUri)
+
+resGw = client.get(searchAddressUri,nil,header)
+
+# puts searchAddressUri
+# puts resGw.body
+
+jsonGwAddResult = JSON.parse( resGw.body )
+idx=0
+gw_addr = jsonGwAddResult[idx]['_data']['addr']
+
+puts gw_addr
 
 
 # data_id = jsonResult[1]

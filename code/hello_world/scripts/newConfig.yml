@@ -1,0 +1,7 @@
+#target: 127.0.0.1
+fed: 127.0.0.1
+fc: sys3.iot.jp.fujitsu.com
+fc_port: 1883
+
+location: "Taipei-Taiwan"
+device_id: "dev-02"
